@@ -1,0 +1,136 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,bindingoffset=0.2in,%
+            left=1in,%
+            right=1in,%
+            top=1in, bottom=1in,%
+            footskip=.25in]{geometry}
+\usepackage[english]{babel}
+%\usepackage[bookmarks]{hyperref}
+\usepackage[plainpages=false]{hyperref}
+\usepackage{bookmark}
+\usepackage[utf8x]{inputenc}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{subfiles}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{tikz}
+\usepackage{nicefrac}
+
+
+\usepackage{enumerate}
+
+% \usepackage{enumitem}
+
+% \setlistdepth{9}
+
+% \setlist[itemize,1]{label=$\bullet$}
+% \setlist[itemize,2]{label=$\bullet$}
+% \setlist[itemize,3]{label=$\bullet$}
+% \setlist[itemize,4]{label=$\bullet$}
+% \setlist[itemize,5]{label=$\bullet$}
+% \setlist[itemize,6]{label=$\bullet$}
+% \setlist[itemize,7]{label=$\bullet$}
+% \setlist[itemize,8]{label=$\bullet$}
+% \setlist[itemize,9]{label=$\bullet$}
+
+% \renewlist{itemize}{itemize}{9}
+
+\newcount\mycount
+
+%\pagenumbering{arabic}
+
+
+\PrerenderUnicode{ů}
+\PrerenderUnicode{é}
+\PrerenderUnicode{á}
+
+\DeclareMathOperator{\odd}{odd}
+\DeclareMathOperator{\vp}{vp}
+\DeclareMathOperator{\m}{m}
+\DeclareMathOperator{\ex}{ex}
+\DeclareMathOperator{\T}{T}
+% \DeclareMathOperator{\t}{t}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\OVF}{OVF}
+\DeclareMathOperator{\EVF}{EVF}
+\DeclareMathOperator{\seq}{seq}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\PS}{PS}
+\DeclareMathOperator{\LS}{LS}
+
+
+\declaretheoremstyle[
+    notefont=\itshape,
+    notebraces={}{},
+    bodyfont=\normalfont,
+    headformat=\NAME:\NOTE,
+    headpunct= ,
+    postheadhook=\phantom,
+    spaceabove=4em,
+    spacebelow=4em
+]{main}
+
+\declaretheoremstyle[
+    notefont=\itshape,
+    notebraces={}{},
+    bodyfont=\normalfont,
+    headformat=\NOTE,
+    headpunct= ,
+    postheadhook=\phantom,
+    spaceabove=4em,
+    spacebelow=4em
+]{block}
+
+\declaretheoremstyle[
+    headfont=\itshape\bfseries,
+    notebraces={}{},
+    bodyfont=\normalfont,
+    headformat=\NAME,
+    headpunct= ,
+    postheadhook=\phantom,
+    spaceabove=2em,
+    spacebelow=2em
+]{proof}
+
+\makeatletter
+\newcommand{\thlabel}[1]{
+    \thmt@thmname:
+    \ifx\@currentlabelname\@empty
+    \else
+      \space\@currentlabelname%
+    \fi
+}
+ 
+\newcommand{\thbookmark}{\bookmark[dest=\@currentHref,rellevel=1,keeplevel,]{\thlabel{\thmt@envname}}}
+\makeatother
+
+\declaretheorem[title=Example, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{example}
+
+\declaretheorem[title=Definition, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{definition}
+\declaretheorem[title=Observation, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{observation}
+\declaretheorem[title=Lemma, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{lemma}
+\declaretheorem[title=Problem, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{problem}
+\declaretheorem[title=Algorithm, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{algorithm}
+\declaretheorem[title=Theorem, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{theorem}
+\declaretheorem[title=Block, style=block, postfoothook=\hrule]{block}
+% \declaretheorem[title=Příklad, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{priklad}
+% \declaretheorem[title=Důsledek, style=main, postheadhook=\thbookmark, postfoothook=\hrule]{dusledek}
+% \declaretheorem[title=Důkaz, style=proof]{dukaz}
+
+
+\begin{document}
+
+
+\cleardoublepage
+
+\subfile{chapters.tex}
+
+\pagebreak
+
+
+\end{document}
